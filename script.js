@@ -9,32 +9,31 @@ const rastro = document.getElementById("rastro");
 const tela2 = document.getElementById("tela2");
 
 document.addEventListener("pointermove", function(event) {
+    if (tela2.style.display === "none") return;
 
-    // Só cria estrelas quando a tela 2 estiver visível
-    if (tela2.style.display === "none") {
+    // No celular, cria estrelas apenas ao arrastar o dedo
+    if (event.pointerType === "touch" && event.buttons === 0) {
         return;
     }
 
-    if (Math.random() > 0.25) return;
-    // Cria uma nova estrelinha
-    const estrela = document.createElement("span");
+    if (Math.random() > 0.35) return;
 
+    const estrela = document.createElement("span");
     estrela.classList.add("estrelinha");
     estrela.textContent = "✦";
 
-    // Coloca a estrela na posição do mouse ou dedo
+    estrela.style.position = "fixed";
     estrela.style.left = event.clientX + "px";
     estrela.style.top = event.clientY + "px";
+    estrela.style.pointerEvents = "none";
 
-    // Adiciona a estrela ao rastro
     rastro.appendChild(estrela);
 
-    // Remove a estrela depois da animação
     setTimeout(function() {
         estrela.remove();
-    }, 1500);
-
+    }, 1000);
 });
+
 
 function irParaTela3() {
     document.getElementById("tela2").style.display = "none";
