@@ -5,10 +5,9 @@
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-    z-index: 999;
+    z-index: 9999;
 }
 
-/* Cada estrelinha criada pelo JavaScript */
 .estrelinha {
     position: fixed;
     pointer-events: none;
@@ -18,7 +17,6 @@
     animation: brilhar 1.5s ease-out forwards;
 }
 
-/* A estrela brilha e desaparece */
 @keyframes brilhar {
     0% {
         opacity: 0;
