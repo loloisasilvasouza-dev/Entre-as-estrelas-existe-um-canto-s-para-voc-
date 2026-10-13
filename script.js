@@ -9,30 +9,34 @@ const rastro = document.getElementById("rastro");
 const tela2 = document.getElementById("tela2");
 
 document.addEventListener("pointermove", function(event) {
-    if (tela2.style.display === "none") return;
+    if (getComputedStyle(tela2).display === "none") return;
 
-    // No celular, cria estrelas apenas ao arrastar o dedo
-    if (event.pointerType === "touch" && event.buttons === 0) {
-        return;
+    criarEstrela(event.clientX, event.clientY);
+});
+
+document.addEventListener("touchmove", function(event) {
+    if (getComputedStyle(tela2).display === "none") return;
+
+    const toque = event.touches[0];
+
+    if (toque) {
+        criarEstrela(toque.clientX, toque.clientY);
     }
+}, { passive: true });
 
-    if (Math.random() > 0.35) return;
-
+function criarEstrela(x, y) {
     const estrela = document.createElement("span");
     estrela.classList.add("estrelinha");
     estrela.textContent = "✦";
-
-    estrela.style.position = "fixed";
-    estrela.style.left = event.clientX + "px";
-    estrela.style.top = event.clientY + "px";
-    estrela.style.pointerEvents = "none";
+    estrela.style.left = x + "px";
+    estrela.style.top = y + "px";
 
     rastro.appendChild(estrela);
 
     setTimeout(function() {
         estrela.remove();
-    }, 1000);
-});
+    }, 1500);
+}
 
 
 function irParaTela3() {
