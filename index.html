@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre as estrelas, existe um canto só para você</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+</head>
+<body>
+
+    <div id="tela1" class="tela1">
+
+    <h1>Entre as estrelas, existe um canto só para você</h1>
+    <h2>Aqui o julgamento não existe.</h2>
+    <p>Fiz esse site para você, num ato de demonstração de amor, carinho e muito tempo de amizade.
+    <br>Cuide bem de si mesma, a vida é uma só, aproveite e faça oque quiser sem medo de ser julgada.
+    <br>Se cuide, se aceite, pessa ajuda sem ter vergonha, viva e seja feliz. </p>
+    <p>Muitas pessoas te amam, e eu sou uma delas.
+    <br> uma das varias que se importa com você, e que torce para que você seja feliz.</p>
+
+    <button onclick="trocarPagina()">
+    Próxima estrela
+</button>
+
+    </div>
+
+   <div id="tela2" class="tela2" style="display: none;">
+    <h1>Você encontrou uma nova estrela! ⭐</h1>
+    <p>Esse cantinho também foi feito para você!</p>
+     <div id="rastro"></div>
+     <button onclick="irParaTela3()">
+    Próxima estrela 
+</button>
+</div>
+
+    <div id="tela3" style="display: none;">
+
+    <h1>WOW! parece que chegamos em outra estrelinha :O</h1>
+
+    <p>Aproveite esse cantinho e desfrute de sua imaginação e criatividade!!</p>
+
+    <div class="ferramentas">
+    <button onclick="mudarFerramenta('lapis')">✏️ Lápis</button>
+    <button onclick="mudarFerramenta('borracha')">🧽 Borracha</button>
+
+    <label>Cor:</label>
+    <input type="color" id="cor" value="#c9a7ff">
+</div>
+
+<canvas id="quadro" width="400" height="300"></canvas>
+
+<button onclick="limparQuadro()">🗑️ Apagar tudo</button>
+
+  <button onclick="irParaTela4()">
+    Próxima estrela 
+</button>
+
+</div>
+
+    <div id="tela4" style="display: none;">
+
+        <h1>Parabéns! você chegou a lua :3</h1>
+
+        <p>Aproveite este momento e descanse...<br>
+        Você passou por todas as estrelas até chegar aqui!
+    você merece um momento para si mesma :D<br>
+Parabéns por ser tão corajosa e forte! você é incrível! </p>
+
+<div class="carta">
+        <div id="conteudoCarta">
+            <h2>Cartinha 1 </h2>
+
+        </div>
+
+        <button id="voltarCarta" onclick="voltarCarta()">
+            ◀ Anterior
+        </button>
+
+        <button id="proximaCarta" onclick="proximaCarta()">
+            Próxima ▶
+        </button>
+    </div>
+
+    </div>
+
+</body>
+</html>
