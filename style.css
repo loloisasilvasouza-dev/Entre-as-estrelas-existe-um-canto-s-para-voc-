@@ -178,3 +178,24 @@ body {
         max-width: 100%;
     }
 }
+
+button {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    padding: 12px 16px;
+    height: auto;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    button {
+        font-size: 14px;
+        padding: 12px;
+        max-width: 100%;
+    }
+}
