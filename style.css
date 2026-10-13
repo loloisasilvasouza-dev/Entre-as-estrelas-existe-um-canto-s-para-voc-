@@ -119,3 +119,62 @@ button {
     cursor: pointer;
 }
 
+/* Evita que tamanhos e espaços fiquem descontrolados */
+* {
+    box-sizing: border-box;
+}
+
+/* Configuração geral */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Faz as telas ocuparem a largura disponível */
+#tela1,
+#tela2,
+#tela3,
+#tela4 {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Impede que o quadro de desenho ultrapasse a tela */
+#quadro {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    touch-action: none;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    #tela1,
+    #tela2,
+    #tela3,
+    #tela4 {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    button {
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+
+    .carta {
+        width: 100%;
+        max-width: 100%;
+    }
+}
